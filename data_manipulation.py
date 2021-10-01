@@ -7,6 +7,8 @@ class Data_manipulation:
     
         self.data_population = []
         self.data_continent = []
+        self.data_lifeexpectancy = []
+        self.data_surface_area = []
         self.data_tupples = []
         self.europe_pop = 0
         self.oceania_pop = 0
@@ -22,6 +24,12 @@ class Data_manipulation:
 
         with open('countries_continent.json') as json_file2:
             self.data_continent = json.load(json_file2)
+
+        with open('countries_life-expectancy.json') as json_file3:
+            self.data_lifeexpectancy = json.load(json_file3)
+
+        with open('countries_by_surface_area.json') as json_file4:
+            self.data_surface_area = json.load(json_file4)
 
     def arrange_data(self):
         for c_pop in self.data_population:
