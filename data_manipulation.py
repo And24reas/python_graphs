@@ -21,22 +21,27 @@ class Data_manipulation:
     def create_data(self):
         with open('countries_population.json') as json_file:
             self.data_population= json.load(json_file)
+            print(len(self.data_population))
 
         with open('countries_continent.json') as json_file2:
             self.data_continent = json.load(json_file2)
-
+            print(len(self.data_continent))
         with open('countries_life-expectancy.json') as json_file3:
             self.data_lifeexpectancy = json.load(json_file3)
+            print(len(self.data_lifeexpectancy))
 
         with open('countries_by_surface_area.json') as json_file4:
             self.data_surface_area = json.load(json_file4)
+            print(len(self.data_surface_area))
 
     def arrange_data(self):
         for c_pop in self.data_population:
             for c_cont in self.data_continent:
                 if c_pop['country'] == c_cont['country']:
                     self.data_tupples.append([c_pop['country'], c_pop['population'], c_cont['continent']])
-                
+
+    def try_zipping(self):
+        pass
         
     def calculate_percentages(self):
         for country in self.data_tupples:
